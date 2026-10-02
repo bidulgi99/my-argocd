@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myweb
+  name: myapp
 spec:
   replicas: 1
   strategy:
@@ -11,14 +11,14 @@ spec:
       maxUnavailable: 1
   selector:
     matchLabels:
-      app: myweb
+      app: myapp
   template:
     metadata:
       labels:
-        app: myweb
+        app: myapp
     spec:
       containers:
-        - name: myweb
+        - name: myapp
           image: dockraccoon/myapp:latest
           ports:
             - containerPort: 8080
